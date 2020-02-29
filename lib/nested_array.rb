@@ -31,15 +31,24 @@ def sorted_matrix
   # Using Array literal syntax only, build another nested array that
   # uses the arrays of conventional and organic produce as before.
   # However, this time, sort each internal array alphabetically by the first character
+  sorted_organic = ORGANIC_PRODUCE.sort
+  sorted_conventional = CONVENTIONAL_PRODUCE.sort
+  produce_storage_room = [
+    sorted_conventional,
+    sorted_organic
+  ]
 end
 
 def matrix_lookup(matrix, row, column)
   # Given any matrix (array of arrays), a row index and a column index,
   # Return the matrix's content at that row and and column
+  return matrix[row][column]
 end
 
 def matrix_update(matrix, row, column, new_value)
   # Given any matrix (array of arrays), a row index and a column index,
   # Update the matrix location at that row and column to have the value of new_value
   # Return the updated matrix
+  matrix[row][column] = new_value
+  return matrix
 end
